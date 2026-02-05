@@ -1,0 +1,298 @@
+{
+  "info": {
+    "_postman_id": "1c46be7b-595e-42f4-9131-96b949d50caa",
+    "name": "TicketBooking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2109270"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8080/api/movies",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Inception\",\n    \"language\": \"English\",\n    \"genre\": \"Sci-Fi\"\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/movies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "movies"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/movies\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"title\": \"Inception\",\n    \"language\": \"English\",\n    \"genre\": \"Sci-Fi\"\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/theatres",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"PVR Koramangala\",\n    \"city\": \"Bangalore\"\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/theatres",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "theatres"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/theatres\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"PVR Koramangala\",\n    \"city\": \"Bangalore\"\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/theatres/screens",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"theatreId\": 1,\n    \"name\": \"Screen 1\"\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/theatres/screens",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "theatres",
+            "screens"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/theatres/screens\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"theatreId\": 1,\n    \"name\": \"Screen 1\"\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/shows",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"movieId\": 1,\n    \"screenId\": 1,\n    \"showDate\": \"2026-02-10\",\n    \"startTime\": \"15:00\",\n    \"basePrice\": 250\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/shows",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "shows"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/shows\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"movieId\": 1,\n    \"screenId\": 1,\n    \"showDate\": \"2026-02-10\",\n    \"startTime\": \"15:00\",\n    \"basePrice\": 250\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/browse/shows?movieId=1&city=Bangalore&date=2026-02-10",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/browse/shows?movieId=1&city=Bangalore&date=2026-02-10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "browse",
+            "shows"
+          ],
+          "query": [
+            {
+              "key": "movieId",
+              "value": "1"
+            },
+            {
+              "key": "city",
+              "value": "Bangalore"
+            },
+            {
+              "key": "date",
+              "value": "2026-02-10"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/browse/shows?movieId=1&city=Bangalore&date=2026-02-10\""
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/bookings",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "booking-1"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": 101,\n    \"showId\": 1,\n    \"seatIds\": [\"A1\", \"A2\", \"A3\"]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/bookings\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Idempotency-Key: booking-1\" \\\n  -d '{\n    \"userId\": 101,\n    \"showId\": 1,\n    \"seatIds\": [\"A1\", \"A2\", \"A3\"]\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/bookings/bulk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"requests\": [\n      {\n        \"userId\": 201,\n        \"showId\": 1,\n        \"seatIds\": [\"B1\", \"B2\"]\n      },\n      {\n        \"userId\": 202,\n        \"showId\": 1,\n        \"seatIds\": [\"B3\", \"B4\"]\n      }\n    ]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bookings/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "bulk"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/bookings/bulk\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"requests\": [\n      {\n        \"userId\": 201,\n        \"showId\": 2,\n        \"seatIds\": [\"B1\", \"B2\"]\n      },\n      {\n        \"userId\": 202,\n        \"showId\": 2,\n        \"seatIds\": [\"B3\", \"B4\"]\n      }\n    ]\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/bookings/bulk-cancel",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"bookingIds\": [5, 6]\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bookings/bulk-cancel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "bulk-cancel"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/bookings/bulk-cancel\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"bookingIds\": [5, 6]\n  }'"
+      },
+      "response": []
+    }
+  ]
+}
